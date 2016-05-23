@@ -10,11 +10,13 @@ $act = !empty($pathParts[2]) ? ucfirst($pathParts[2]) : 'All';
 
 $controllerClassName =  $ctrl . 'Controller';
 
-try{
+	try{
 
 	$controller = new $controllerClassName;
 	$method = 'action' . $act;
 	$controller->$method();
-}catch (Exception $e){
+	}catch (Exception $e){
 
-}
+	}
+
+
