@@ -1,6 +1,16 @@
-Ext.application({
-	name:'MyFirstExtJSApp',
-	launch:function(){
+Ext.onReady(function(){
+
+
+		Ext.Ajax.request({
+			url : '../FrontController.php?ctrl=books&act=all',
+			success: function(response, opts) {
+				var obj = Ext.decode(response.responseText);
+				console.log(obj);
+			},
+			failure: function(response, opts) {
+				console.log('server-side failure with status code ' + response.status);
+			}
+		});
 		Ext.create('Ext.container.Viewport',{
 				layout:'fit',
 				items:[
@@ -11,5 +21,5 @@ Ext.application({
 				]
 			}
 		);
-	}
+
 });

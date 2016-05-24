@@ -1,6 +1,7 @@
 <?php
 
 abstract class AbstractModel
+	implements JsonSerializable
 {
     static protected $table;
 
@@ -88,5 +89,10 @@ abstract class AbstractModel
             $this->update();
         }
     }
+
+	public function jsonSerialize()
+	{
+		return $this->data;
+	}
 
 }
