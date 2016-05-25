@@ -2,7 +2,7 @@
 
 require __DIR__ . '/autoload.php';
 
-$ctrl = isset($_GET['ctrl']) ? $_GET['ctrl'] : 'News';
+$ctrl = isset($_GET['ctrl']) ? $_GET['ctrl'] : 'Books';
 $act = isset($_GET['act']) ? $_GET['act'] : 'All';
 
 $controllerClassName =  $ctrl . 'Controller';

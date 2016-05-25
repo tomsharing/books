@@ -2,9 +2,10 @@
 
 class BooksController
 {
-	public function actionAll(){
+	public function actionAll()
+	{
 		try{
-			$db = new Db();
+
 			$items = BooksModel::findAll();
 			$view = new View();
 			$view->items = $items;
@@ -16,11 +17,27 @@ class BooksController
 
 	public function actionOne()
 	{
+
 		$id = $_GET['id'];
-		$item = BooksModel::findOneByPk($id);
+		if(is_int($id)){
+			$item = BooksModel::findOneByPk($id);
+		}else{
+			throw new Exception('id is not valid');
+		}
+
 		$view = new View();
 		$view->item = $item;
 		$view->display('books/one.php');
+	}
+
+	public function actionAdd()
+	{
+		$book = new BooksModel();
+
+
+
+		$_POST['success'] = true;
+		echo json_encode($_POST);
 	}
 
 }
