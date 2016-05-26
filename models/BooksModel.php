@@ -1,10 +1,12 @@
 <?php
 
 /**
- * Class NewsModel
+ * Class BooksModel
  * @property $id
- * @property $title
- * @property $text
+ * @property $name
+ * @property $author
+ * @property $year
+ * @property $genre
  */
 class BooksModel
 	extends AbstractModel

@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'host' => 'localhost',
-    'user' => 'root',
-    'password' => '',
-    'dbname' => 'booksdb',
+	'host' => 'localhost',
+	'user' => 'root',
+	'password' => '',
+	'dbname' => 'booksdb',
 ];
